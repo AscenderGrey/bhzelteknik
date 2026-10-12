@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Monochrome from the logo + one warm accent sampled from their lighting jobs */
+@theme {
+  --color-ink: #0b0b0c;
+  --color-ink-2: #17171a;
+  --color-paper: #f6f5f2;
+  --color-line: #e3e1db;
+  --color-muted: #5a5853;
+  --color-amber: #f2a93b;
+  --color-amber-soft: #fbe7c6;
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility container-x {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber;
+}
+@utility btn-amber {
+  @apply btn bg-amber text-ink hover:bg-[#f6bb5e];
+}
+@utility btn-dark {
+  @apply btn bg-ink text-white hover:bg-ink-2;
+}
+@utility btn-ghost {
+  @apply btn border border-current/25 hover:border-current/60;
+}
+@utility eyebrow {
+  @apply text-sm font-bold uppercase tracking-[0.14em] text-muted;
+}
+@utility h2 {
+  @apply text-3xl font-extrabold tracking-tight text-balance sm:text-4xl;
+}
+@utility lead {
+  @apply text-lg leading-relaxed text-muted text-pretty;
+}
+@utility input {
+  @apply w-full rounded-xl border-2 border-line bg-white px-4 py-3 text-base focus:border-ink focus:outline-none;
+}
